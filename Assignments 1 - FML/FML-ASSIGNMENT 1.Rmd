@@ -1,0 +1,54 @@
+---
+title: "Assignment 1"
+author: "Yashwanth k"
+date: "2023-09-09"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# using the default(inbuilt dataset) and loaded it.
+```{r}
+data("ToothGrowth")
+ToothGrowth
+```
+
+
+#Printing out descriptive statistics for a selection of quantitative and categorical variables.
+
+```{r}
+summary(ToothGrowth)
+head(ToothGrowth)
+tail(ToothGrowth)
+```
+
+#Printing out categorical variables.
+```{r}
+table(ToothGrowth$supp)
+
+```
+
+
+#Transforming variable.
+```{r}
+ToothGrowth$len_Transforming <- log(ToothGrowth$len)
+
+ToothGrowth$len_Transforming
+
+```
+
+
+#Plotting one quantitative variable (Hist graph), and one scatterplot
+
+```{r}
+
+hist(ToothGrowth$len)
+
+```
+
+```{r}
+x <- ToothGrowth$len #tooth length
+y <- ToothGrowth$dose 
+plot(x,y,xlab="len",ylab = "dose",main = "Tooth-Growth Plot")
+```
+
